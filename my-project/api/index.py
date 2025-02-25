@@ -37,10 +37,9 @@ def index():
     """
     return render_template_string(html_template, title=title)
 
-# Required for Vercel
+# Vercel expects a `handler` function
 def handler(event, context):
     return app(event, context)
 
-# Run locally
-if __name__ == "__main__":
+if __name__ == '__main__':
     app.run(debug=True)
